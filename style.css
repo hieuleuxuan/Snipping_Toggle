@@ -1,0 +1,44 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+input[type=checkbox]{
+    visibility: hidden;
+}
+input[type=checkbox]:checked + label{
+    transform: rotate(360deg);
+    background-color: #f54254;
+}
+input[type=checkbox]:checked + label::before{
+    transform: translateX(90px);
+    background-color: #fff;
+}
+label{
+    display: flex;
+    width: 180px;
+    height: 90px;
+    border: 6px solid #f54254;
+    border-radius: 99em;
+    position: relative;
+    transition: transform 0.75s ease-in-out;
+    transform-origin: 50% 50%;
+    cursor: pointer;
+}
+label::before{
+    transition: transform 0.75s ease;
+    transition-delay: 0.5s;
+    content: "";
+    display: block;
+    position: absolute;
+    width: 54px;
+    height: 54px;
+    background-color: #f54254;
+    border-radius: 50%;
+    top: 12px;
+    left: 12px;
+}
